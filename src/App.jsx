@@ -4,7 +4,7 @@ import Home from "./components/Home";
 
 const App = () => {
   return (
-    <div className="bg-primary w-fill min-h-screen flex">
+    <div className="bg-primary w-fill h-screen flex">
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/about" element={<About />} />
