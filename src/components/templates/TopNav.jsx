@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "../../utils/Axios";
 
-const TopNav = () => {
+const TopNav = ({wid ,lef}) => {
   const [query, setQuery] = useState("");
   const [searches, setSearches] = useState([]);
 
@@ -16,31 +16,28 @@ const TopNav = () => {
   };
 
   useEffect(() => {
-    if (query) {
-      getSearches();
-      console.log(searches);
-    }
+    getSearches();
   }, [query]);
 
   return (
-    <div className=" h-[10vh] relative flex justify-start items-center ml-[15%]">
+    <div className=" h-[10vh] relative flex justify-center items-center">
       <i className="ri-search-line text-3xl text-zinc-400"></i>
       <input
         onChange={(e) => setQuery(e.target.value)}
         value={query}
         type="text"
-        className="w-[50%] mx-10 p-5 text-xl outline-none border-none bg-transparent text-zinc-200"
+        className={`w-[${wid}%]  mx-10 p-5 text-xl outline-none border-none bg-transparent text-zinc-200`}
         placeholder="Search anything"
       />
 
-      {query.length > 0 && (
+      {/* {query.length > 1 && ( */}
         <i
-          onClick={() => setQuery(" ")}
-          className="ri-close-fill text-3xl text-zinc-400"
+          onClick={() => setQuery("")}
+          className={`${query.length > 0 ? "initial" : "invisible"} ri-close-fill text-3xl text-zinc-400`}
         ></i>
-      )}
+      {/* )} */}
 
-      <div className="absolute w-[50%]  max-h-[50vh] bg-zinc-200 top-[90%] left-[5%]  overflow-auto rounded">
+      <div className={`absolute w-[${wid}%]  max-h-[50vh] bg-zinc-200 top-[90%] left-[${lef}%]  overflow-auto rounded`}>
         {searches.map((s, i) => (
           <Link
             key={i}

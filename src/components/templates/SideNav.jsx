@@ -12,7 +12,7 @@ const SideNav = () => {
         <h1 className="text-white font-semibold text-xl mt-10 mb-5">
           New Feeds
         </h1>
-        <Link className="hover:text-white hover:bg-secondary rounded p-5 duration-300">
+        <Link to='./trending' className="hover:text-white hover:bg-secondary rounded p-5 duration-300">
           <i className="ri-fire-fill mr-2"></i>
           Trending
         </Link>

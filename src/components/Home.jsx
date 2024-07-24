@@ -5,6 +5,7 @@ import axios from "../utils/Axios";
 import Header from "./templates/Header"
 import HorizontalCards from "./templates/HorizontalCards";
 import DropDown from "./templates/DropDown";
+import Loading from "./Loading";
 
 const Home = () => {
   document.title = "Movies App | Homepage";
@@ -33,8 +34,6 @@ const Home = () => {
     }
   };
 
-  // console.log('trending', trending);
-
   useEffect(() => {
     !wallpaper & getHeaderWallpaper();
     getTrending();
@@ -44,7 +43,7 @@ const Home = () => {
     <>
       <SideNav />
       <div className=" w-[80%] h-screen overflow-auto overflow-x-hidden">
-        <TopNav />
+        <TopNav wid={50} lef={25}/>
         <Header data={wallpaper} />
         <div className=" flex justify-between p-5">
           <h1 className="text-zinc-400 text-3xl font-semibold">Trending</h1>
@@ -59,7 +58,9 @@ const Home = () => {
       </div>
     </>
   ) : (
-    <h1>Loading</h1>
+    <div className=" w-full h-screen flex justify-center items-center">
+      <Loading />
+    </div>
   );
 };
 
