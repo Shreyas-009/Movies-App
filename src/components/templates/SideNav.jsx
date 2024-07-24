@@ -20,7 +20,7 @@ const SideNav = () => {
           Trending
         </Link>
         <Link
-          to="./popular"
+          to="./person"
           className="hover:text-white hover:bg-secondary rounded p-5 duration-300"
         >
           <i className="ri-bard-fill mr-2"></i>
@@ -40,7 +40,10 @@ const SideNav = () => {
           <i className="ri-tv-2-fill mr-2"></i>
           Tv Show
         </Link>
-        <Link className="hover:text-white hover:bg-secondary rounded p-5 duration-300">
+        <Link
+          to="./person"
+          className="hover:text-white hover:bg-secondary rounded p-5 duration-300"
+        >
           <i className="ri-team-fill mr-2"></i>
           People
         </Link>
