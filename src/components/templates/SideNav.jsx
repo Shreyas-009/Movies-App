@@ -16,7 +16,7 @@ const SideNav = () => {
           <i className="ri-fire-fill mr-2"></i>
           Trending
         </Link>
-        <Link className="hover:text-white hover:bg-secondary rounded p-5 duration-300">
+        <Link to='./popular' className="hover:text-white hover:bg-secondary rounded p-5 duration-300">
           <i className="ri-bard-fill mr-2"></i>
           Popular
         </Link>
