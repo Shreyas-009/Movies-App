@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "../../utils/Axios";
 
-const TopNav = ({wid ,lef}) => {
+const TopNav = ({ wid, lef }) => {
   const [query, setQuery] = useState("");
   const [searches, setSearches] = useState([]);
 
@@ -31,17 +31,22 @@ const TopNav = ({wid ,lef}) => {
       />
 
       {/* {query.length > 1 && ( */}
-        <i
-          onClick={() => setQuery("")}
-          className={`${query.length > 0 ? "initial" : "invisible"} ri-close-fill text-3xl text-zinc-400`}
-        ></i>
+      <i
+        onClick={() => setQuery("")}
+        className={`${
+          query.length > 0 ? "initial" : "invisible"
+        } ri-close-fill text-3xl text-zinc-400`}
+      ></i>
       {/* )} */}
 
-      <div className={`absolute w-[${wid}%]  max-h-[50vh] bg-zinc-200 top-[90%] left-[${lef}%]  overflow-auto rounded`}>
+      <div
+        className={`absolute w-[${wid}%]  max-h-[50vh] bg-zinc-700 top-[90%] left-[${lef}%]  overflow-auto z-50 rounded-lg`}
+      >
         {searches.map((s, i) => (
           <Link
+            to={`/${s.media_type}/details/${s.id}`}
             key={i}
-            className="font-semibold w-full p-10 flex items-center border-2 border-zinc-100 hover:text-black text-zinc-600 hover:bg-zinc-300 duration-300 "
+            className="font-semibold w-full p-10 flex items-center border-2 border-zinc-800 hover:text-black text-zinc-600 hover:bg-zinc-800 duration-300 "
           >
             <img
               className="h-[10vh] w-[10vh] object-cover rounded mr-5 shadow-lg"
@@ -54,7 +59,7 @@ const TopNav = ({wid ,lef}) => {
               }
               alt=""
             />
-            <span>
+            <span className="text-zinc-200">
               {s.title ||
                 s.name ||
                 s.original_name ||

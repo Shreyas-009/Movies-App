@@ -72,7 +72,7 @@ const TvShows = () => {
           <h1 className="text-3xl text-zinc-400 font-semibold">Loading...</h1>
         }
       >
-        <VerticalCards data={tv} title={category} />
+        <VerticalCards data={tv} title="tv" />
       </InfiniteScroll>
     </div>
   ) : (

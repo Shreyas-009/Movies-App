@@ -72,7 +72,7 @@ const Movie = () => {
           <h1 className="text-3xl text-zinc-400 font-semibold">Loading...</h1>
         }
       >
-        <VerticalCards data={movie} title={category} />
+        <VerticalCards data={movie} title="movie" />
       </InfiniteScroll>
     </div>
   ) : (

@@ -20,7 +20,7 @@ const Header = ({ data }) => {
       </h1>
       <p className="w-[70%] my-3">
         {data.overview.slice(0, 200)}...
-        <Link className="text-blue-400">more</Link>
+        <Link to={`/${data.media_type}/details/${data.id}`} className="text-blue-400">more</Link>
       </p>
       <p className="flex gap-1">
         <i className="text-yellow-500 ri-megaphone-fill"></i>{data.release_date || "No Information"}

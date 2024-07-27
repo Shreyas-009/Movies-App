@@ -15,7 +15,9 @@ const People = () => {
 
   const getPeople = async (reset = false) => {
     try {
-      const { data } = await axios.get(`/person/popular?page=${reset ? 1 : page}`);
+      const { data } = await axios.get(
+        `/person/popular?page=${reset ? 1 : page}`
+      );
       //   setPeople(data.results);
       if (data.results.length > 0) {
         setPeople((prevState) =>
@@ -63,7 +65,7 @@ const People = () => {
           <h1 className="text-3xl text-zinc-400 font-semibold">Loading...</h1>
         }
       >
-        <VerticalCards data={people} />
+        <VerticalCards data={people} title="person" />
       </InfiniteScroll>
     </div>
   ) : (
