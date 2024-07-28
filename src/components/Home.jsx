@@ -43,7 +43,7 @@ const Home = () => {
     <>
       <SideNav />
       <div className=" w-[80%] h-screen overflow-auto overflow-x-hidden">
-        <TopNav wid={50} lef={25}/>
+        <TopNav wid={50} lef={25} />
         <Header data={wallpaper} />
         <div className=" flex justify-between p-5">
           <h1 className="text-zinc-400 text-3xl font-semibold">Trending</h1>
@@ -54,7 +54,9 @@ const Home = () => {
             options={["tv", "movie", "all"]}
           />
         </div>
-        <HorizontalCards data={trending} />
+        <div className="px-5">
+          <HorizontalCards data={trending} />
+        </div>
       </div>
     </>
   ) : (

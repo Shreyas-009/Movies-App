@@ -13,7 +13,7 @@ const Trending = () => {
   const [trending, setTrending] = useState([]);
   const [page, setPage] = useState(1);
   const [hasmore, setHasmore] = useState(true);
-  document.title="Movie App | Trending " + category;
+  document.title = "Movie App | Trending " + category;
 
   const getTrending = async (reset = false) => {
     try {
@@ -42,10 +42,7 @@ const Trending = () => {
   };
 
   useEffect(() => {
-
     refreshHandler();
-  
-    
   }, [category, duration]);
 
   const navigate = useNavigate();
@@ -83,7 +80,10 @@ const Trending = () => {
           <h1 className="text-3xl text-zinc-400 font-semibold">Loading...</h1>
         }
       >
-        <VerticalCards data={trending} title={category} />
+        <VerticalCards
+          data={trending}
+          title={category}
+        />
       </InfiniteScroll>
     </div>
   ) : (

@@ -20,13 +20,24 @@ const Header = ({ data }) => {
       </h1>
       <p className="w-[70%] my-3">
         {data.overview.slice(0, 200)}...
-        <Link to={`/${data.media_type}/details/${data.id}`} className="text-blue-400">more</Link>
+        <Link
+          to={`/${data.media_type}/details/${data.id}`}
+          className="text-blue-400"
+        >
+          more
+        </Link>
       </p>
       <p className="flex gap-1">
-        <i className="text-yellow-500 ri-megaphone-fill"></i>{data.release_date || "No Information"}
-        <i className="text-yellow-500 ri-album-fill ml-5"></i>{data.media_type.toUpperCase()}
+        <i className="text-yellow-500 ri-megaphone-fill"></i>
+        {data.release_date || "No Information"}
+        <i className="text-yellow-500 ri-album-fill ml-5"></i>
+        {data.media_type.toUpperCase()}
       </p>
-      <Link className="p-4 rounded bg-secondary mt-5 ">Watch Trailer</Link>
+      <Link
+        className="p-4 rounded bg-secondary mt-5 "
+      >
+        Watch Trailer
+      </Link>
     </div>
   );
 };
