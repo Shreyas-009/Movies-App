@@ -49,9 +49,9 @@ const SideNav = () => {
         </Link>
       </nav>
 
-      <hr className="border-none h-[1px] bg-zinc-400" />
+      <hr className=" border-none h-[1px] bg-zinc-400" />
 
-      <nav className="text-zinc-400 flex flex-col gap-3">
+      <nav className="hidden text-zinc-400  flex-col gap-3">
         <h1 className="text-white font-semibold text-xl mt-10 mb-5">
           Website Information
         </h1>

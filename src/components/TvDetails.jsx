@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { asyncloadtv, removetv } from "../store/actions/tvActions";
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import { Outlet } from "react-router-dom";
+import noimage from "../../public/image.png";
 
 import Loading from "./Loading";
 import HorizontalCards from "./templates/HorizontalCards";
@@ -19,7 +20,6 @@ const TvDetails = () => {
       dispatch(removetv());
     };
   }, [id]);
-  console.log(info);
 
   return info ? (
     <div
@@ -119,7 +119,7 @@ const TvDetails = () => {
         {info.watchproviders && info.watchproviders.flatrate && (
           <div className="flex gap-7 ic text-white">
             <h1>Available on Platform</h1>
-            {info.watchproviders.flatrate.map((m,i) => (
+            {info.watchproviders.flatrate.map((m, i) => (
               <img
                 key={i}
                 title={m.provider_name}
@@ -134,7 +134,7 @@ const TvDetails = () => {
         {info.watchproviders && info.watchproviders.rent && (
           <div className="flex gap-7 ic text-white">
             <h1>Available on Rent</h1>
-            {info.watchproviders.rent.map((m,i) => (
+            {info.watchproviders.rent.map((m, i) => (
               <img
                 key={i}
                 title={m.provider_name}
@@ -159,6 +159,32 @@ const TvDetails = () => {
               />
             ))}
           </div>
+        )}
+      </div>
+
+      {/*part 4 Seasons */}
+      <hr className="mt-7 h-[2px] bg-zinc-500 border-none" />
+      <h1 className="text-2xl font-bold text-white my-3">Seasons</h1>
+      <div className="w-[100%] flex gap-4  overflow-y-hidden mb-5 pb-3">
+        {info.detail.seasons.length > 1 ? (
+          info.detail.seasons.map((s, i) => (
+            <div key={i} className="flex flex-col text-white">
+              <img
+                src={`${
+                  s.poster_path
+                    ? `https://image.tmdb.org/t/p/original/${s.poster_path}`
+                    : noimage
+                }`}
+                alt=""
+                className=" object-cover h-[40vh] w-[12vw]"
+              />
+              <h1 className="text-2xl font-semibold line-clamp-1">{s.name}</h1>
+            </div>
+          ))
+        ) : (
+          <h1 className="text-3xl text-white from-black h-[45vh] w-full flex items-center justify-center bg-[rgba(0,0,0,.4)]">
+            No Seasons Available
+          </h1>
         )}
       </div>
 

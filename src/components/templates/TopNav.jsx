@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "../../utils/Axios";
+import noimage from '../../../public/image.png'
 
 const TopNav = ({ wid, lef }) => {
   const [query, setQuery] = useState("");
