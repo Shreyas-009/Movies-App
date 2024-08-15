@@ -47,17 +47,19 @@ const Trending = () => {
 
   const navigate = useNavigate();
   return trending.length > 0 ? (
-    <div className="w-full h-screen p-[2%]">
+    <div className="w-full h-screen p-[2%] py-4">
       <div className="w-full  flex items-center justify-between font-bold">
-        <h1 className="text-zinc-400 text-4xl font-semibold">
+        <h1 className="text-zinc-400 text-xl md:text-4xl font-semibold flex gap-2 items-center">
           <i
             onClick={() => navigate(-1)}
-            className="ri-arrow-left-line to-zinc-400 hover:text-secondary text-4xl"
+            className="ri-arrow-left-line to-zinc-400 hover:text-secondary text-2xl md:text-4xl"
           ></i>{" "}
-          Trending
+          <span>Trending</span>
         </h1>
-        <TopNav wid={100} lef={0} />
-        <div className="w-[40%] flex gap-3">
+        <div className="hidden md:block">
+          <TopNav wid={100} lef={0} />
+        </div>
+        <div className="w-[60%] md:w-[40%] flex gap-3">
           <DropDown
             title="Category"
             category={category}
@@ -80,10 +82,7 @@ const Trending = () => {
           <h1 className="text-3xl text-zinc-400 font-semibold">Loading...</h1>
         }
       >
-        <VerticalCards
-          data={trending}
-          title={category}
-        />
+        <VerticalCards data={trending} title={category} />
       </InfiniteScroll>
     </div>
   ) : (

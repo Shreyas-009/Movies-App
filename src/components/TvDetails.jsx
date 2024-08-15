@@ -55,60 +55,72 @@ const TvDetails = () => {
       </nav>
 
       {/* part 2 poster and details */}
-      <div className="w-fill flex ">
+      <div className="w-full flex flex-col md:flex-row">
         <img
-          className="shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[60vh] object-cover"
+          className="shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[60vh] md:h-[60vh] object-cover"
           src={`https://image.tmdb.org/t/p/original${
-            info.detail.poster_path || info.detail.bainfo.detailkdrop_path
-          })}`}
+            info.detail.poster_path || info.detail.backdrop_path
+          }}`}
           alt=""
         />
 
-        <div className="content ml-[5%] text-white">
-          <h1 className="font-black text-5xl flex gap-3 items-end">
+        <div className="content ml-0 md:ml-[5%] text-white mt-5 md:mt-0">
+          <h1 className="font-black text-2xl md:text-5xl flex gap-3 items-end">
             {info.detail.name ||
               info.detail.title ||
               info.detail.original_title ||
               info.detail.original_name}
-            <small className="text-2xl font-bold text-zinc-300 ">
+            <small className="text-xl md:text-2xl font-bold text-zinc-300 ">
               ({info.detail.first_air_date.split("-", 1)})
             </small>
           </h1>
 
-          <div className="flex gap-x-5  items-center mt-5 mb-5">
-            <span className=" rounded-full text-xl font-semibold bg-yellow-600 h-[6vh] w-[6vh] flex justify-center items-center">
+          <div className="flex gap-x-2 md:gap-x-5 items-center mt-3 md:mt-5 mb-3 md:mb-5">
+            <span className="hidden md:flex rounded-full text-lg md:text-xl font-semibold bg-yellow-600 h-[4vh] w-[4vh] md:h-[6vh] md:w-[6vh] justify-center items-center">
               {(info.detail.vote_average * 10).toFixed()} <sup>%</sup>
             </span>
-            <h1 className="font-semibold text-2xl w-[50px] leading-6">
+            <h1 className="hidden md:block font-semibold text-xl md:text-2xl w-[40px] md:w-[50px] leading-6">
               User Score
             </h1>
-            <h1>{info.detail.first_air_date}</h1>
-            <h1>{info.detail.genres.map((g) => g.name).join(",")}</h1>
-            {/* <h1>
-              {info.detail.spoken_languages.map(l=> l.name).join(', ')}
-            </h1> */}
-            <h1>{info.detail.runtime} min</h1>
+
+            <h1 className="text-sm md:text-base">
+              {info.detail.first_air_date}
+            </h1>
+
+            <h1 className="text-sm md:text-base">
+              {info.detail.genres.map((g) => g.name).join(",")}
+            </h1>
+
+            <h1 className="text-sm md:text-base">{info.detail.runtime} min</h1>
           </div>
-          <h1 className="text-xl font-bold italic text-zinc-200">
+
+          <h1 className="text-lg md:text-xl font-bold italic text-zinc-200">
             {info.detail.tagline}
           </h1>
-          <h1 className="text-2xl mt-3 mb-1 font-semibold text-zinc-100">
+
+          <h1 className="text-xl md:text-2xl mt-2 md:mt-3 mb-1 font-semibold text-zinc-100">
             Overview
           </h1>
-          <p className="text-zinc-300">{info.detail.overview}</p>
-          <h1 className="text-2xl mt-3 mb-1 font-semibold text-zinc-100">
-            tv Translations
+
+          <p className="text-zinc-300 text-sm md:text-base">
+            {info.detail.overview}
+          </p>
+
+          <h1 className="text-xl md:text-2xl mt-2 md:mt-3 mb-1 font-semibold text-zinc-100">
+            TV Translations
           </h1>
-          <p className="text-zinc-300 mb-10">
+
+          <p className="text-zinc-300 mb-5 md:mb-10 text-sm md:text-base">
             {info.translations.translations
               .map((t) => t.english_name)
               .join(", ")}
           </p>
+
           <Link
-            className="p-5 bg-secondary rounded-lg "
+            className="p-3 md:p-5 bg-secondary rounded-lg text-sm md:text-base"
             to={`${pathname}/trailer`}
           >
-            <i className="ri-play-fill text-xl mr-2"></i>
+            <i className="ri-play-fill text-lg md:text-xl mr-2"></i>
             Play Trailer
           </Link>
         </div>
@@ -182,7 +194,7 @@ const TvDetails = () => {
             </div>
           ))
         ) : (
-          <h1 className="text-3xl text-white from-black h-[45vh] w-full flex items-center justify-center bg-[rgba(0,0,0,.4)]">
+          <h1 className="text-3xl text-white from-black h-[20vh] md:h-[45vh] w-full flex items-center justify-center bg-[rgba(0,0,0,.4)]">
             No Seasons Available
           </h1>
         )}
@@ -191,11 +203,15 @@ const TvDetails = () => {
       {/*part 4 Recommendations or similar */}
       <hr className="mt-7 h-[2px] bg-zinc-500 border-none" />
       <h1 className="text-2xl font-bold text-white my-3">Recommendations</h1>
-      <HorizontalCards
-        data={
-          info.recommendations.length > 0 ? info.recommendations : info.similar
-        }
-      />
+      <div className="mb-10 md:mb-0">
+        <HorizontalCards
+          data={
+            info.recommendations.length > 0
+              ? info.recommendations
+              : info.similar
+          }
+        />
+      </div>
       <Outlet />
     </div>
   ) : (

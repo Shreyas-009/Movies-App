@@ -14,22 +14,19 @@ import NotFound from "./components/NotFound";
 
 const App = () => {
   return (
-    <div className="bg-primary w-fill h-screen flex">
+    <div className=" lg:flex bg-primary w-full h-screen ">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/trending" element={<Trending />} />
         <Route path="/popular" element={<Popular />} />
-
         <Route path="/movie" element={<Movie />} />
         <Route path="/movie/details/:id" element={<MovieDetails />}>
           <Route path="/movie/details/:id/trailer" element={<Trailer />} />
         </Route>
-
         <Route path="/tv" element={<TvShows />} />
         <Route path="/tv/details/:id" element={<TvDetails />}>
           <Route path="/tv/details/:id/trailer" element={<Trailer />} />
         </Route>
-
         <Route path="/person" element={<People />} />
         <Route path="/person/details/:id" element={<PersonDetails />} />
         <Route path="*" element={<NotFound />} />

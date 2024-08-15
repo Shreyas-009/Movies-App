@@ -23,7 +23,7 @@ export const asyncloadtv = (id) => async (dispatch, getState) => {
     };
 
     dispatch(loadtv(theultimatedetails));
-    console.log(theultimatedetails);
+    // console.log(theultimatedetails);
   } catch (error) {
     console.log("Error : ", error);
   }

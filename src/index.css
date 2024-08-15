@@ -73,3 +73,21 @@ select::-ms-expand {
 .select:hover::after {
     color: #6556cd;
 }
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .select {
+        width: 12em;
+        height: 2.5em;
+        line-height: 2.5;
+    }
+
+    select {
+        font-size: 0.9em;
+        padding: 0 0.4em;
+    }
+
+    .select::after {
+        padding: 0 0.8em;
+    }
+}

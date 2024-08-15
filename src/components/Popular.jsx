@@ -46,16 +46,18 @@ const Popular = () => {
 
   const navigate = useNavigate();
   return popular.length > 0 ? (
-    <div className="w-full h-screen p-[2%]">
+    <div className="w-full h-screen p-[2%] py-4">
       <div className="w-full  flex items-center justify-between font-bold">
-        <h1 className="text-zinc-400 text-4xl font-semibold">
+        <h1 className="text-zinc-400 text-xl md:text-4xl font-semibold flex gap-2 items-center">
           <i
             onClick={() => navigate(-1)}
-            className="ri-arrow-left-line to-zinc-400 hover:text-secondary text-4xl"
+            className="ri-arrow-left-line to-zinc-400 hover:text-secondary text-2xl md:text-4xl"
           ></i>{" "}
-          Popular
+          <span>Popular</span>
         </h1>
-        <TopNav wid={100} lef={0} />
+        <div className="hidden md:block">
+          <TopNav wid={100} lef={0} />
+        </div>
         <DropDown
           title="Category"
           category={category}

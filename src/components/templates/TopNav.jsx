@@ -21,13 +21,13 @@ const TopNav = ({ wid, lef }) => {
   }, [query]);
 
   return (
-    <div className=" h-[10vh] relative flex justify-center items-center">
-      <i className="ri-search-line text-3xl text-zinc-400"></i>
+    <div className=" h-[7vh] md:h-[10vh] relative flex justify-center items-center">
+      <i className="ri-search-line text-xl md:text-3xl text-zinc-400"></i>
       <input
         onChange={(e) => setQuery(e.target.value)}
         value={query}
         type="text"
-        className={`w-[${wid}%]  mx-10 p-5 text-xl outline-none border-none bg-transparent text-zinc-200`}
+        className={`w-[50%] md:w-[${wid}%] mx-4 md:mx-10 md:p-5 text-sm md:text-xl outline-none border-none bg-transparent text-zinc-200`}
         placeholder="Search anything"
       />
 
@@ -36,21 +36,21 @@ const TopNav = ({ wid, lef }) => {
         onClick={() => setQuery("")}
         className={`${
           query.length > 0 ? "initial" : "invisible"
-        } ri-close-fill text-3xl text-zinc-400`}
+        } ri-close-fill text-xl md:text-3xl text-zinc-400`}
       ></i>
       {/* )} */}
 
       <div
-        className={`absolute w-[${wid}%]  max-h-[50vh] bg-zinc-700 top-[90%] left-[${lef}%]  overflow-auto z-50 rounded-lg`}
+        className={`absolute w-[${wid}%]  max-h-[25vh] md:max-h-[50vh] bg-zinc-700 top-[90%] left-[${lef}%]  overflow-auto z-20 rounded-lg`}
       >
         {searches.map((s, i) => (
           <Link
             to={`/${s.media_type}/details/${s.id}`}
             key={i}
-            className="font-semibold w-full p-10 flex items-center border-2 border-zinc-800 hover:text-black text-zinc-600 hover:bg-zinc-800 duration-300 "
+            className="font-semibold w-full p-3 md:p-10 flex items-center border-2 border-zinc-800 hover:text-black text-zinc-600 hover:bg-zinc-800 duration-300 "
           >
             <img
-              className="h-[10vh] w-[10vh] object-cover rounded mr-5 shadow-lg"
+              className="h-[4vh] w-[4vh] md:h-[10vh] md:w-[10vh] object-cover rounded mr-5 shadow-lg"
               src={
                 s.poster_path
                   ? `https://image.tmdb.org/t/p/w500${
@@ -60,7 +60,7 @@ const TopNav = ({ wid, lef }) => {
               }
               alt=""
             />
-            <span className="text-zinc-200">
+            <span className="text-sm md:text-lg text-zinc-200">
               {s.title ||
                 s.name ||
                 s.original_name ||
