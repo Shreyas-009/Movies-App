@@ -57,7 +57,7 @@ const TvDetails = () => {
       {/* part 2 poster and details */}
       <div className="w-full flex flex-col md:flex-row">
         <img
-          className="shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[60vh] md:h-[60vh] object-cover"
+          className="shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] h-[60vh] sm:h-[120vh] md:h-[60vh] object-cover"
           src={`https://image.tmdb.org/t/p/original${
             info.detail.poster_path || info.detail.backdrop_path
           }}`}
@@ -76,10 +76,10 @@ const TvDetails = () => {
           </h1>
 
           <div className="flex gap-x-2 md:gap-x-5 items-center mt-3 md:mt-5 mb-3 md:mb-5">
-            <span className="hidden md:flex rounded-full text-lg md:text-xl font-semibold bg-yellow-600 h-[4vh] w-[4vh] md:h-[6vh] md:w-[6vh] justify-center items-center">
+            <span className="hidden lg:flex rounded-full text-lg md:text-xl font-semibold bg-yellow-600 h-[4vh] w-[4vh] md:h-[6vh] md:w-[6vh] justify-center items-center">
               {(info.detail.vote_average * 10).toFixed()} <sup>%</sup>
             </span>
-            <h1 className="hidden md:block font-semibold text-xl md:text-2xl w-[40px] md:w-[50px] leading-6">
+            <h1 className="hidden lg:block font-semibold text-xl md:text-2xl w-[40px] md:w-[50px] leading-6">
               User Score
             </h1>
 

@@ -21,8 +21,8 @@ const TopNav = ({ wid, lef }) => {
   }, [query]);
 
   return (
-    <div className=" h-[7vh] md:h-[10vh] relative flex justify-center items-center">
-      <i className="ri-search-line text-xl md:text-3xl text-zinc-400"></i>
+    <div className=" h-[7vh]  md:h-[70px] lg:h-[10vh] relative flex justify-center items-center">
+      <i className="ri-search-line text-xl sm:text2xl md:text-2xl lg:text-3xl text-zinc-400"></i>
       <input
         onChange={(e) => setQuery(e.target.value)}
         value={query}
@@ -41,7 +41,7 @@ const TopNav = ({ wid, lef }) => {
       {/* )} */}
 
       <div
-        className={`absolute w-[${wid}%]  max-h-[25vh] md:max-h-[50vh] bg-zinc-700 top-[90%] left-[${lef}%]  overflow-auto z-20 rounded-lg`}
+        className={`absolute w-[60%] sm:w-[70%]  md:w-[60%] lg:w-[${wid}%]  max-h-[30vh] sm:max-h-[50vh] md:max-h-[50vh] lg:max-h-[50vh] bg-zinc-700 top-[90%] left-[${lef}%]  overflow-auto z-20 rounded-lg`}
       >
         {searches.map((s, i) => (
           <Link
@@ -50,7 +50,7 @@ const TopNav = ({ wid, lef }) => {
             className="font-semibold w-full p-3 md:p-10 flex items-center border-2 border-zinc-800 hover:text-black text-zinc-600 hover:bg-zinc-800 duration-300 "
           >
             <img
-              className="h-[4vh] w-[4vh] md:h-[10vh] md:w-[10vh] object-cover rounded mr-5 shadow-lg"
+              className="h-[8vh] w-[8vh] sm:h-[10vh] sm:w-[10vh] object-cover rounded mr-5 shadow-lg"
               src={
                 s.poster_path
                   ? `https://image.tmdb.org/t/p/w500${

@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import noimage from "../../../public/image.png";
 
-const HorizontalCards = ({ data }) => {
+const HorizontalCards = ({ data, mediaType }) => {
   return (
     <div className="w-[100%] md:h-fit flex gap-4 overflow-y-hidden md:mb-5">
       {data.length > 1 ? (
         data.map((d, i) => (
           <Link
-            to={`/${d.media_type}/details/${d.id}`}
+            to={`/${d.media_type || mediaType}/details/${d.id}`}
             key={i}
-            className=" min-w-[35%] md:min-w-[15%] bg-zinc-900 mb-3 h-[25vh] md:h-[45vh]"
+            className=" min-w-[35%] sm:min-w-[20%] md:min-w-[15%] bg-zinc-900 mb-3 h-[25vh]   md:h-[45vh] landscape:h-[70vh] landscape:min-w-[20%]"
           >
             <img
               src={

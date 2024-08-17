@@ -48,14 +48,14 @@ const TvShows = () => {
   return tv.length > 0 ? (
     <div className="w-full h-screen p-[2%] py-4">
       <div className="w-full  flex items-center justify-between font-bold">
-        <h1 className="text-zinc-400 text-xl md:text-4xl font-semibold flex gap-2 items-center">
+        <h1 className="text-zinc-400 text-xl md:text-3xl lg:text-4xl font-semibold flex gap-2 items-center">
           <i
             onClick={() => navigate(-1)}
-            className="ri-arrow-left-line to-zinc-400 hover:text-secondary text-2xl md:text-4xl"
+            className="ri-arrow-left-line to-zinc-400 hover:text-secondary "
           ></i>{" "}
           <span>Tv</span>
         </h1>
-        <div className="hidden md:block">
+        <div className="hidden lg:block">
           <TopNav wid={100} lef={0} />
         </div>
         <DropDown

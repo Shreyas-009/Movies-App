@@ -13,12 +13,12 @@ const Header = ({ data }) => {
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
-      className="w-full h-[25%] md:h-[50vh] flex flex-col justify-center  items-start p-[7%] text-white"
+      className="w-full h-[30vh] sm:h-[40vh] md:h-[80vh] lg:h-[70vh] xl:h-[50vh] flex flex-col justify-center  items-start p-[7%] text-white"
     >
-      <h1 className="w-[70%] text-xl md:text-5xl font-black ">
+      <h1 className="w-[70%] text-xl md:text-3xl lg:text-5xl font-black ">
         {data.name || data.title || data.original_name || data.original_title}
       </h1>
-      <p className="w-[90%] md:w-[70%] text-sm md:text-lg my-1 md:my-3">
+      <p className="w-[90%] md:w-[70%] text-smmd:text-base lg:text-lg my-1 md:my-3">
         {window.innerWidth < 768
           ? data.overview.slice(0, 100)
           : data.overview.slice(0, 160)}
@@ -30,7 +30,7 @@ const Header = ({ data }) => {
           more
         </Link>
       </p>
-      <p className="flex text-sm font-semibold md:text-lg gap-1">
+      <p className="flex text-sm font-semibold md:text-base lg:text-lg gap-1">
         <i className="text-yellow-500 ri-megaphone-fill"></i>
         {data.release_date || "No Information"}
         <i className="text-yellow-500 ri-album-fill ml-5"></i>
@@ -38,7 +38,7 @@ const Header = ({ data }) => {
       </p>
       <Link
         to={`/${data.media_type}/details/${data.id}/trailer`}
-        className="p-2 md:p-4  text-xs md:text-lg rounded bg-secondary mt-2 md:mt-5 "
+        className="p-2 md:p-3 lg:p-4  text-xs md:text-base lg:text-lg rounded bg-secondary mt-2 md:mt-5 "
       >
         Watch Trailer
       </Link>
