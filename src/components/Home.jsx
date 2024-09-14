@@ -74,7 +74,7 @@ const Home = () => {
             className={`absolute lg:hidden ${
               menuOpen
                 ? "top-4 left-4 sm:left-10 md:left-10"
-                : "top-4 left-4 sm:left-10 md:left-10 md:top-5"
+                : "top-3 left-4 sm:left-10 md:left-10 md:top-5"
             } z-50 transform transition-all duration-700 ease-in-out ${
               menuOpen ? "translate-x-[180px]" : "translate-x-0"
             }`}

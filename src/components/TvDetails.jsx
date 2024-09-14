@@ -180,21 +180,26 @@ const TvDetails = () => {
       <div className="w-[100%] flex gap-4  overflow-y-hidden mb-5 pb-3">
         {info.detail.seasons.length > 1 ? (
           info.detail.seasons.map((s, i) => (
-            <div key={i} className="flex flex-col text-white">
+            <div
+              key={i}
+              className="flex flex-col text-white min-w-[35%] sm:min-w-[20%] md:min-w-[15%] bg-zinc-900 mb-3 h-[30vh] md:h-[45vh] landscape:h-[60vh] landscape:min-w-[20%]"
+            >
               <img
                 src={`${
                   s.poster_path
                     ? `https://image.tmdb.org/t/p/original/${s.poster_path}`
                     : noimage
                 }`}
-                alt=""
-                className=" object-cover h-[40vh] w-[12vw]"
+                alt={s.name}
+                className="object-cover h-[90%] md:h-[95%] w-full"
               />
-              <h1 className="text-2xl font-semibold line-clamp-1">{s.name}</h1>
+              <h1 className="text-sm md:text-xl font-semibold line-clamp-1 px-1 md:px-2">
+                {s.name}
+              </h1>
             </div>
           ))
         ) : (
-          <h1 className="text-3xl text-white from-black h-[20vh] md:h-[45vh] w-full flex items-center justify-center bg-[rgba(0,0,0,.4)]">
+          <h1 className="text-3xl text-white from-black h-[10vh] md:h-[5vh] w-full flex items-center justify-center bg-[rgba(0,0,0,.4)]">
             No Seasons Available
           </h1>
         )}
