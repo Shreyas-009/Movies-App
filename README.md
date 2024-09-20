@@ -1,8 +1,31 @@
-# React + Vite
+# Movies App by Shreyas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Demo
+[Visit the App](https://movies-app-by-shreyas.vercel.app)
 
-Currently, two official plugins are available:
+## Description
+This is a movie app built using React and `react-router-dom` that provides detailed information on movies, TV shows, and people involved in the entertainment industry. It offers a smooth user experience with features like searching, filtering, and watching trailers.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **Search Movies**: Users can search for their favorite movies.
+- **Filter Movies and Series**: Filter to separate movies and TV shows.
+- **Popular and Trending Pages**: Separate pages to display popular and trending movies or shows.
+- **People Pages**: Dedicated pages for actors, directors, and other people involved in the production.
+- **Movie Details**: View detailed information about a specific movie, such as:
+  - Ratings
+  - Available languages
+  - OTT platforms where the movie can be watched
+  - Related/recommended movies
+- **External Links**: Links to:
+  - IMDb page
+  - Wikipedia page
+  - Official movie website
+- **Trailers**: Users can watch trailers of movies directly from the app.
+
+## Technology Stack
+- ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+- ![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+- ![Redux](https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/CSS3-
